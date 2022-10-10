@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Keep</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar__left">
+      <span class="material-icons icon icon navbar__menu" id="menuButton">menu</span>
+      <img src="img/keep_logo.png" alt="Google Keep logo" class="navbar__left__logo">
+      <span class="navbar__left__title">Keep</span>
+    </div>
+
+    <form class="navbar__center" autocomplete="off">
+      <span class="material-icons icon" id="searchButton">search</span>
+      <input type="text" class="navbar__center__input" placeholder="Cerca" id="searchInput">
+      <span class="material-icons icon" id="deleteButton">close</span>
+    </form>
+
+    <div class="navbar__right">
+      <span class="material-icons icon icon-small" id="switchThemeButton">dark_mode</span>
+      <span class="material-icons icon icon-small" id="gridButton">table_rows</span>
+      <span class="material-icons icon icon-small" id="settingsButton">settings</span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <aside class="sidemenu" id="sidemenu">
+      <div class="sidemenu__voice sidemenu-active" data-tab="notes">
+        <span class="material-icons icon">lightbulb</span>
+        <span class="sidemenu__voice__text">Note</span>
+      </div>
+
+      <div class="sidemenu__voice" data-tab="archive">
+        <span class="material-icons icon">archive</span>
+        <span class="sidemenu__voice__text">Archivio</span>
+      </div>
+
+      <div class="sidemenu__voice" data-tab="trash">
+        <span class="material-icons icon">delete</span>
+        <span class="sidemenu__voice__text">Cestino</span>
+      </div>
+    </aside>
+
+    <main>
+      <div class="center">
+        <div id="notes">
+          <div class="newnote">
+            <textarea name="" cols="30" rows="10" id="createNoteInput" class="newnote__input"
+              placeholder="Scrivi una nota..."></textarea>
+            <span class="material-icons icon" id="addNote">add</span>
+          </div>
+
+          <h3 class="section__title">altre</h3>
+
+          <div class="section">
+            <div class="note">
+              <h3 class="note__title">Titolo della nota</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed justo nisl, bibendum non vestibulum non,
+                porttitor nec ipsum. Duis vel dolor id metus iaculis molestie ac id turpis. Nullam ipsum urna, dignissim
+                ut tellus eu, egestas commodo libero. Suspendisse feugiat sem sapien, ac mollis mi blandit vel.</p>
+                <div class="note__controls">
+                  <span class="material-icons note-icon archive-icon">archive</span>
+                  <span class="material-icons note-icon delete-icon">delete</span>
+                </div>
+            </div>
+            <div class="note">
+              <h3 class="note__title">Titolo della nota</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s,</p>
+                <div class="note__controls">
+                  <span class="material-icons note-icon archive-icon">archive</span>
+                  <span class="material-icons note-icon delete-icon">delete</span>
+                </div>
+            </div>
+
+            <div class="note">
+              <h3 class="note__title">Titolo della nota</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s,</p>
+                <div class="note__controls">
+                  <span class="material-icons note-icon archive-icon">archive</span>
+                  <span class="material-icons note-icon delete-icon">delete</span>
+                </div>
+            </div>
+
+            <div class="note">
+              <h3 class="note__title">Titolo della nota</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s,</p>
+                <div class="note__controls">
+                  <span class="material-icons note-icon archive-icon">archive</span>
+                  <span class="material-icons note-icon delete-icon">delete</span>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="archive" style="display: none;">
+          <div class="section">
+            <div class="note">
+              <h3 class="note__title">Nota archiviata</h3>
+              <p>Questo è un esempio di nota archiviata contenente un testo esageratamente
+                lungo e privo di significato.</p>
+            </div>
+            <div class="note">
+              <h3 class="note__title">Nota archiviata</h3>
+              <p>Questo è un esempio di nota archiviata contenente un testo esageratamente
+                lungo e privo di significato.</p>
+            </div>
+          </div>
+        </div>
+        <div id="trash" style="display: none;">
+          <div class="section"></div>
+        </div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
