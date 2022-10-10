@@ -377,8 +377,21 @@ MOBILE
     display: none;
   }
 
+  .navbar {
+    flex-wrap: wrap;
+  }
+
   .navbar__left {
     margin-right: 8px;
+    order: 1;
+  }
+
+  .navbar__center {
+    order: 3;
+  }
+
+  .navbar__right {
+    order: 2;
   }
 
   .section {
