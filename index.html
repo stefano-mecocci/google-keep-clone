@@ -2,132 +2,256 @@
 <html lang="it">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Keep</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="styles/style.css">
+    <title>Google Keep</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Robot font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" media="(max-width: 700px)" href="css/mobile.css">
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="navbar__left">
-      <span class="material-icons icon icon navbar__menu" id="menuButton">menu</span>
-      <img src="img/keep_logo.png" alt="Google Keep logo" class="navbar__left__logo">
-      <span class="navbar__left__title">Keep</span>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav__left">
+            <span class="material-icons-outlined md-lighter md-hover" id="menuBtn">menu</span>
+            <img src="img/logo.png" alt="Google Keep logo" class="nav__logo">
+            <span class="nav__title">Keep</span>
+
+            <form class="nav__search" autocomplete="off">
+                <span class="material-icons nav__search__btn md-lighter md-hover" id="searchBtn">search</span>
+                <input type="text" class="nav__search__input" placeholder="Cerca" id="searchInput">
+                <span class="material-icons-outlined md-lighter md-hover" id="deleteBtn">close</span>
+            </form>
+        </div>
+
+        <div class="nav__right">
+            <span class="material-icons-outlined md-light md-hover" id="darkThemeBtn">dark_mode</span>
+            <span class="material-icons-outlined md-light md-hover" id="changeLayoutBtn">view_agenda</span>
+            <span class="material-icons-outlined md-light md-hover" id="settingsBtn">settings</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside>
+            <div class="menu__entry selected-entry" data-tab="notes">
+                <span class="material-icons-outlined md-lighter">lightbulb</span>
+                <span class="menu__entry__text">Note</span>
+            </div>
+
+            <div class="menu__entry" data-tab="remainders">
+                <span class="material-icons-outlined md-light">notifications</span>
+                <span class="menu__entry__text">Promemoria</span>
+            </div>
+            <div class="menu__entry" data-tab="filter">
+                <span class="material-icons-outlined md-light">label</span>
+                <span class="menu__entry__text">liste</span>
+            </div>
+            <div class="menu__entry" data-tab="editLabels">
+                <span class="material-icons-outlined md-light">edit</span>
+                <span class="menu__entry__text">Modifica etichette</span>
+            </div>
+
+            <div class="menu__entry" data-tab="archive">
+                <span class="material-icons-outlined md-light">archive</span>
+                <span class="menu__entry__text">Archivio</span>
+            </div>
+            <div class="menu__entry" data-tab="trash">
+                <span class="material-icons-outlined md-light">delete</span>
+                <span class="menu__entry__text">Cestino</span>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main>
+            <!-- notes tab -->
+            <div class="tab" id="notesTab">
+                <h1 class="tab__title">Note</h1>
+
+                <form class="newnote" autocomplete="off" id="createNoteForm">
+                    <input type="text" name="title" class="newnote__title" placeholder="Titolo">
+                    <textarea name="text" cols="30" rows="10" class="newnote__text" placeholder="Testo"></textarea>
+
+                    <input type="reset" value="Annulla" class="newnote__btn">
+                    <input type="submit" value="Salva" class="newnote__btn">
+                </form>
+
+                <div class="notes">
+                    <div class="note">
+                        <h3 class="note__title">Lorem ipsum</h3>
+                        <p class="note__text">Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's
+                            standard dummy text ever since the
+                            1500s, when an unknown printer took
+                            a galley of type and scrambled it
+                            to make a type specimen book. It
+                            has survived not only five centuries,
+                            but also the leap into electronic
+                            typesetting, remaining essentially
+                            unchanged. It was popularised in the
+                            1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages,
+                            and more recently with desktop publishing
+                            software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                    <div class="note">
+                        <h3 class="note__title">Lorem ipsum</h3>
+                        <p class="note__text">Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's
+                            standard dummy text ever since the
+                            1500s, when an unknown printer took
+                            a galley of type and scrambled it
+                            to make a type specimen book. It
+                            has survived not only five centuries,
+                            but also the leap into electronic
+                            typesetting, remaining essentially
+                            unchanged. It was popularised in the
+                            1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages,
+                            and more recently with desktop publishing
+                            software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                    <div class="note">
+                        <h3 class="note__title">Lorem ipsum</h3>
+                        <p class="note__text">Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's
+                            standard dummy text ever since the
+                            1500s, when an unknown printer took
+                            a galley of type and scrambled it
+                            to make a type specimen book. It
+                            has survived not only five centuries,
+                            but also the leap into electronic
+                            typesetting, remaining essentially
+                            unchanged. It was popularised in the
+                            1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages,
+                            and more recently with desktop publishing
+                            software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- remainders tab -->
+            <div class="tab" id="remaindersTab" style="display: none;">
+                <h1 class="tab__title">Promemoria</h1>
+            </div>
+
+            <!-- edit labels tab -->
+            <div class="tab" id="editLabelsTab" style="display: none;">
+                <h1 class="tab__title">Modifica etichette</h1>
+            </div>
+
+            <!-- archive tab -->
+            <div class="tab" id="archiveTab" style="display: none;">
+                <h1 class="tab__title">Archivio</h1>
+
+                <div class="notes">
+                    <div class="note">
+                        <h3 class="note__title">Lorem ipsum</h3>
+                        <p class="note__text">Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's
+                            standard dummy text ever since the
+                            1500s, when an unknown printer took
+                            a galley of type and scrambled it
+                            to make a type specimen book. It
+                            has survived not only five centuries,
+                            but also the leap into electronic
+                            typesetting, remaining essentially
+                            unchanged. It was popularised in the
+                            1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages,
+                            and more recently with desktop publishing
+                            software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                    <div class="note">
+                        <h3 class="note__title">Lorem ipsum</h3>
+                        <p class="note__text">Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's
+                            standard dummy text ever since the
+                            1500s, when an unknown printer took
+                            a galley of type and scrambled it
+                            to make a type specimen book. It
+                            has survived not only five centuries,
+                            but also the leap into electronic
+                            typesetting, remaining essentially
+                            unchanged. It was popularised in the
+                            1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages,
+                            and more recently with desktop publishing
+                            software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- trash tab -->
+            <div class="tab" id="trashTab" style="display: none;">
+                <h1 class="tab__title">Cestino</h1>
+
+                <div class="notes">
+                    <div class="note">
+                        <h3 class="note__title">Lorem ipsum</h3>
+                        <p class="note__text">Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's
+                            standard dummy text ever since the
+                            1500s, when an unknown printer took
+                            a galley of type and scrambled it
+                            to make a type specimen book. It
+                            has survived not only five centuries,
+                            but also the leap into electronic
+                            typesetting, remaining essentially
+                            unchanged. It was popularised in the
+                            1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages,
+                            and more recently with desktop publishing
+                            software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <form class="navbar__center" autocomplete="off">
-      <span class="material-icons icon" id="searchButton">search</span>
-      <input type="text" class="navbar__center__input" placeholder="Cerca" id="searchInput">
-      <span class="material-icons icon" id="deleteButton">close</span>
-    </form>
-
-    <div class="navbar__right">
-      <span class="material-icons icon icon-small" id="switchThemeButton">dark_mode</span>
-      <span class="material-icons icon icon-small" id="gridButton">table_rows</span>
-      <span class="material-icons icon icon-small" id="settingsButton">settings</span>
-    </div>
-  </nav>
-
-  <div class="container">
-    <aside class="sidemenu" id="sidemenu">
-      <div class="sidemenu__voice sidemenu-active" data-tab="notes">
-        <span class="material-icons icon">lightbulb</span>
-        <span class="sidemenu__voice__text">Note</span>
-      </div>
-
-      <div class="sidemenu__voice" data-tab="archive">
-        <span class="material-icons icon">archive</span>
-        <span class="sidemenu__voice__text">Archivio</span>
-      </div>
-
-      <div class="sidemenu__voice" data-tab="trash">
-        <span class="material-icons icon">delete</span>
-        <span class="sidemenu__voice__text">Cestino</span>
-      </div>
-    </aside>
-
-    <main>
-      <div class="center">
-        <div id="notes">
-          <div class="newnote">
-            <textarea name="" cols="30" rows="10" id="createNoteInput" class="newnote__input"
-              placeholder="Scrivi una nota..."></textarea>
-            <span class="material-icons icon" id="addNote">add</span>
-          </div>
-
-          <h3 class="section__title">altre</h3>
-
-          <div class="section">
-            <div class="note">
-              <h3 class="note__title">Titolo della nota</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed justo nisl, bibendum non vestibulum non,
-                porttitor nec ipsum. Duis vel dolor id metus iaculis molestie ac id turpis. Nullam ipsum urna, dignissim
-                ut tellus eu, egestas commodo libero. Suspendisse feugiat sem sapien, ac mollis mi blandit vel.</p>
-                <div class="note__controls">
-                  <span class="material-icons note-icon archive-icon">archive</span>
-                  <span class="material-icons note-icon delete-icon">delete</span>
-                </div>
-            </div>
-            <div class="note">
-              <h3 class="note__title">Titolo della nota</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s,</p>
-                <div class="note__controls">
-                  <span class="material-icons note-icon archive-icon">archive</span>
-                  <span class="material-icons note-icon delete-icon">delete</span>
-                </div>
-            </div>
-
-            <div class="note">
-              <h3 class="note__title">Titolo della nota</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s,</p>
-                <div class="note__controls">
-                  <span class="material-icons note-icon archive-icon">archive</span>
-                  <span class="material-icons note-icon delete-icon">delete</span>
-                </div>
-            </div>
-
-            <div class="note">
-              <h3 class="note__title">Titolo della nota</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s,</p>
-                <div class="note__controls">
-                  <span class="material-icons note-icon archive-icon">archive</span>
-                  <span class="material-icons note-icon delete-icon">delete</span>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div id="archive" style="display: none;">
-          <div class="section">
-            <div class="note">
-              <h3 class="note__title">Nota archiviata</h3>
-              <p>Questo è un esempio di nota archiviata contenente un testo esageratamente
-                lungo e privo di significato.</p>
-            </div>
-            <div class="note">
-              <h3 class="note__title">Nota archiviata</h3>
-              <p>Questo è un esempio di nota archiviata contenente un testo esageratamente
-                lungo e privo di significato.</p>
-            </div>
-          </div>
-        </div>
-        <div id="trash" style="display: none;">
-          <div class="section"></div>
-        </div>
-    </main>
-  </div>
-
-  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-  <script src="scripts/main.js"></script>
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

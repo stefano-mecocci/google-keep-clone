@@ -1,0 +1,374 @@
+/*
+================================
+
+BASE
+
+================================
+*/
+
+:root {
+    font-size: 20px;
+
+    --bgLight3: #fff;
+    --bgLight2: #eee;
+    --bgLight1: #ccc;
+    --bgDark1: #555;
+    --bgDark2: #404040;
+    --bgDark3: #333;
+    --bgDark4: #222;
+
+    --borders: #555;
+    --yellowNote: #635D19;
+    --selectedTab: #41331C;
+
+    --textLight3: #eee;
+    --textLight2: #ddd;
+    --textLight1: #aaa;
+    --textDark1: #888;
+    --textDark2: #515151;
+    --textDark3: #222;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bgDark4);
+    font-family: "Roboto";
+    color: var(--textLight3);
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.md-hover {
+    padding: 9px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.md-light {
+    color: var(--textDark1);
+}
+
+.md-light.md-hover:hover {
+    color: var(--textLight3);
+    background-color: var(--bgDark2);
+}
+
+.md-lighter {
+    color: var(--textLight3);
+    font-size: 24px;
+}
+
+.md-lighter.md-hover:hover {
+    background-color: var(--bgDark1);
+}
+
+/* .md-dark {
+    color: var(--textDark);
+    font-size: 24px;
+}
+
+.md-dark.md-hover:hover {
+    color: var(--text);
+    background-color: var(--bgDark4);
+} */
+
+.md-darker {
+    color: var(--textDark2);
+    font-size: 1.2rem;
+}
+
+.md-darker.md-hover:hover {
+    background-color: var(--bgLight1);
+}
+
+/*
+================================
+
+NAVBAR
+
+================================
+*/
+
+nav {
+    box-sizing: border-box;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--borders);
+
+    background-color: var(--bgDark4);
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+}
+
+.nav__logo {
+    max-height: 36px;
+    padding: 0 10px;
+}
+
+.nav__title {
+    font-size: 1rem;
+    padding-right: 60px;
+}
+
+.nav__left {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav__search {
+    background-color: var(--bgDark2);
+    transition: .25s;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 3px 5px;
+
+}
+
+.nav__search .material-icons {
+    font-size: 1.2rem;
+}
+
+.nav__search__input {
+    font-size: 0.8rem;
+    border: 0;
+    outline: 0;
+    color: var(--textNormal);
+    background-color: inherit;
+    flex-grow: 1;
+    padding: 4px 5px;
+}
+
+.nav__search__input::placeholder {
+    color: var(--textNormal);
+}
+
+.nav__search #deleteBtn {
+    visibility: hidden;
+}
+
+.nav__search.search-active {
+    background-color: var(--bgLight2);
+    color: var(--textDark3);
+}
+
+.nav__search.search-active .nav__search__input::placeholder {
+    color: #666;
+    font-weight: 300;
+}
+
+.nav__search.search-active .nav__search__input {
+    color: var(--textBlack);
+}
+
+.nav__right {
+    margin-left: 8px;
+}
+
+/*
+================================
+
+SIDEBAR
+
+================================
+*/
+
+aside {
+    position: fixed;
+    z-index: 5;
+    height: 100%;
+    top: 74px;
+    background-color: var(--bgDark4);
+}
+
+.sidebar-closed .menu__entry {
+    border-radius: 30px 30px 30px 30px;
+    padding: 13px;
+    margin-left: 10px;
+}
+
+.sidebar-closed .menu__entry__text {
+    padding-left: 0px;
+    width: 0px;
+    opacity: 0%;
+}
+
+.menu__entry {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 13px 15px;
+    border-radius: 0px 30px 30px 0px;
+    transition: .3s;
+}
+
+.menu__entry__text {
+    color: var(--textLight3);
+    font-weight: 500;
+    font-size: 0.7rem;
+    padding-left: 25px;
+    width: 190px;
+    transition: .3s;
+    overflow: hidden;
+    height: 17px;
+}
+
+.menu__entry.selected-entry {
+    background-color: var(--selectedTab);
+}
+
+.menu__entry:not(.selected-entry):hover {
+    background-color: var(--bgDark3);
+}
+
+/*
+================================
+
+MAIN CONTENT
+
+================================
+*/
+
+main {
+    margin-left: 270px;
+    margin-bottom: 40px;
+    padding: 15px;
+    transition: .3s;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main.sidebar-closed {
+    margin-left: 60px;
+}
+
+.newnote {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--borders);
+    padding: 15px;
+    justify-content: end;
+    max-width: 600px;
+    border-radius: 10px;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.newnote__title {
+    background-color: var(--bgDark4);
+    width: 100%;
+    border: 0;
+    color: var(--textLight3);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.newnote__text {
+    background-color: var(--bgDark4);
+    width: 100%;
+    border: 0;
+    color: var(--textLight3);
+    font-size: 0.8rem;
+    min-width: 100%;
+    min-height: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    padding-left: 4px;
+    resize: none;
+}
+
+.newnote__title:focus,
+.newnote__text:focus {
+    outline: 0;
+}
+
+.newnote__btn {
+    color: var(--textLight2);
+    width: 20%;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0;
+    font-family: "Roboto";
+    background-color: var(--bgDark4);
+    padding: 12px 0;
+    margin-left: 5px;
+}
+
+.newnote__btn:hover {
+    background-color: var(--bgDark3);
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab__title {
+    margin: 0;
+    margin-top: 65px;
+    margin-bottom: 20px;
+}
+
+.notes {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.note {
+    width: 240px;
+    border-radius: 9px;
+    padding: 10px 15px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+
+    border: 1px solid var(--borders);
+
+    border: 0;
+    background-color: var(--yellowNote);
+}
+
+.note__title {
+    font-size: 1.05rem;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.note__text {
+    margin: 0;
+    font-size: 0.8rem;
+    max-height: 300px;
+    overflow-y: hidden;
+
+    /* ben supportato?? */
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+}
+
+.notes.one-column {
+    flex-direction: column;
+}
+
+.note.one-column {
+    width: 100%;
+    max-width: 600px;
+}

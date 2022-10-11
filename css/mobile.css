@@ -1,0 +1,85 @@
+:root {
+    font-size: 18px;
+}
+
+/*
+================================
+
+NAVBAR
+
+================================
+*/
+
+.nav__title,
+.nav__logo,
+.nav__search__btn,
+#deleteBtn,
+.nav__right {
+    display: none;
+}
+
+.md-light.md-hover:hover,
+.md-lighter.md-hover:hover,
+.md-darker.md-hover:hover,
+.menu__entry:not(.selected-entry):hover {
+    background-color: inherit;
+}
+
+nav {
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+    background-color: var(--bgDark4);
+}
+
+.nav__search {
+    margin-left: 8px;
+}
+
+/*
+================================
+
+SIDEBAR
+
+================================
+*/
+
+aside {
+    z-index: 3;
+    height: 100%;
+    position: fixed;
+    padding-top: 15px;
+    top: 60px;
+}
+
+.menu__entry {
+    border-radius: 0;
+}
+
+/*
+================================
+
+MAIN CONTENT
+
+================================
+*/
+
+main {
+    margin-left: 60px;
+}
+
+.notes {
+    flex-direction: column;
+}
+
+.note {
+    width: 100%;
+}
+
+.tab__title {
+    margin-top: 60px;
+}
+
+.newnote__btn {
+    width: 30%;
+}
