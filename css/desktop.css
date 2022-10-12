@@ -64,16 +64,6 @@ body {
     background-color: var(--bgDark1);
 }
 
-/* .md-dark {
-    color: var(--textDark);
-    font-size: 24px;
-}
-
-.md-dark.md-hover:hover {
-    color: var(--text);
-    background-color: var(--bgDark4);
-} */
-
 .md-darker {
     color: var(--textDark2);
     font-size: 1.2rem;

@@ -13,7 +13,6 @@ NAVBAR
 .nav__title,
 .nav__logo,
 .nav__search__btn,
-#deleteBtn,
 .nav__right {
     display: none;
 }
@@ -34,6 +33,11 @@ nav {
 
 .nav__search {
     margin-left: 8px;
+    padding: 0;
+}
+
+.nav__search__input {
+    padding: 6px 10px;
 }
 
 /*
