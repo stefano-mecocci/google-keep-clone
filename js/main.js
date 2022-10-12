@@ -145,7 +145,7 @@ sidebar.addEventListener("click", function (event) {
         elem = elem.parentElement;
     }
 
-    if (elem.nodeName != "ASIDE") {
+    if (elem.nodeName != "ASIDE" && elem.classList.contains("menu__entry")) {
         for (let voice of this.children) {
             voice.classList.remove("selected-entry");
             voice.firstElementChild.classList.replace("md-lighter", "md-light");
@@ -164,3 +164,61 @@ sidebar.addEventListener("click", function (event) {
         }
     }
 })
+
+//
+// cambio di tema
+//
+let darkThemeBtn = document.getElementById("darkThemeBtn");
+let darkThemeBtnMobile = document.getElementById("darkThemeBtnMobile");
+let root = document.querySelector(":root");
+let darkTheme = true;
+
+const LIGHT_THEME = {
+    "--bgDark4": "#fff",
+    "--bgDark3": "#f1f3f4",
+    "--bgDark2": "#eaeaea",
+    "--bgDark1": "#eee",
+    "--bgLight1": "#ddd",
+    "--textLight2": "#222",
+    "--textDark1": "#666",
+    "--borders": "#ddd",
+    "--textLight3": "#292929",
+    "--selectedTab": "#FEEFC3",
+    "--yellowNote": "#FFF475"
+};
+
+const DARK_THEME = {
+    "--bgLight3": "#fff",
+    "--bgLight2": "#eee",
+    "--bgLight1": "#ccc",
+    "--bgDark1": "#555",
+    "--bgDark2": "#404040",
+    "--bgDark3": "#333",
+    "--bgDark4": "#222",
+    "--borders": "#555",
+    "--yellowNote": "#635D19",
+    "--selectedTab": "#41331C",
+    "--textLight3": "#eee",
+    "--textLight2": "#ddd",
+    "--textLight1": "#aaa",
+    "--textDark1": "#888",
+    "--textDark2": "#515151",
+    "--textDark3": "#222"
+};
+
+function switchTheme() {
+    if (darkTheme) {
+        for (let prop in LIGHT_THEME) {
+            root.style.setProperty(prop, LIGHT_THEME[prop]);
+        }
+    } else {
+        for (let prop in DARK_THEME) {
+            root.style.setProperty(prop, DARK_THEME[prop]);
+        }
+    }
+
+    darkTheme = !darkTheme;
+}
+
+darkThemeBtn.addEventListener("click", switchTheme);
+darkThemeBtnMobile.addEventListener("click", switchTheme);

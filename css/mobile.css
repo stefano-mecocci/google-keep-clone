@@ -46,10 +46,17 @@ SIDEBAR
 
 aside {
     z-index: 3;
-    height: 100%;
+    height: calc(100% - 75px);
     position: fixed;
     padding-top: 15px;
     top: 60px;
+}
+
+.controls {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    left: 10px;
 }
 
 .menu__entry {
