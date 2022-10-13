@@ -2,6 +2,13 @@
     font-size: 18px;
 }
 
+.notification {
+    left: 50%;
+    top: 10px;
+    bottom: initial;
+    transform: translateX(-50%);
+}
+
 /*
 ================================
 
@@ -59,13 +66,13 @@ aside {
 .controls {
     position: absolute;
     display: block;
-    bottom: 10px;
-    left: 10px;
+    bottom: 20px;
+    left: 24px;
 }
 
-.menu__entry {
+/* .menu__entry {
     border-radius: 0;
-}
+} */
 
 /*
 ================================
@@ -93,4 +100,9 @@ main {
 
 .newnote__btn {
     width: 30%;
+}
+
+span,
+input {
+    -webkit-tap-highlight-color: transparent;
 }

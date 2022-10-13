@@ -3,6 +3,22 @@ import {Note} from './Note.js';
 let $darkTheme = true;
 let $currentTab = "notes";
 
+let closeNotificationBtn = document.getElementById("closeNotificationBtn");
+let notificationText = closeNotificationBtn.parentElement.firstElementChild;
+let notify = closeNotificationBtn.parentElement;
+
+closeNotificationBtn.addEventListener("click", function() {
+  notify.style.opacity = "0%";
+  notify.style.visibility = "hidden";
+});
+
+function sendNotify(message) {
+  notificationText.textContent = message;
+
+  notify.style.visibility = "visible";
+  notify.style.opacity = "100%";
+}
+
 /*
 =====================================================
 
@@ -57,14 +73,26 @@ let menuBtn = document.getElementById('menuBtn');
 let main = document.getElementsByTagName('main')[0];
 let isMenuOpen = true;
 
+if (window.innerWidth > 700) {
+  sidebar.classList.add("sidebar-open");
+} else {
+  isMenuOpen = false;
+}
+
 menuBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('sidebar-closed');
+  sidebar.classList.toggle('sidebar-open');
 
   if (window.innerWidth > 700) {
-    main.classList.toggle('sidebar-closed');
+    main.classList.toggle('sidebar-open');
   }
 
   isMenuOpen = !isMenuOpen;
+
+  if (isMenuOpen && window.innerWidth < 700) {
+    searchForm.style.opacity = "0%";
+  } else {
+    searchForm.style.opacity = "100%";
+  }
 });
 
 function enlargeMenu() {
@@ -140,9 +168,10 @@ createNoteForm.addEventListener('submit', function(event) {
   if (title != '' && text != '') {
     let note = new Note(title, text);
     addNoteTo(note, "notes");
+    createNoteForm.reset();
+  } else {
+    sendNotify("Manca il titolo o il testo");
   }
-
-  createNoteForm.reset();
 });
 
 
